@@ -1,0 +1,538 @@
+@font-face {
+    font-family: 'Gill Sans Nova';
+    src: local('Gill Sans Nova Bold'), local('Gill-Sans-Nova-Bold'),
+        url('../fonts/GillSansNova-Bold.woff2') format('woff2'),
+        url('../fonts/GillSansNova-Bold.woff') format('woff'),
+        url('../fonts/GillSansNova-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gill Sans Nova';
+    src: local('Gill Sans Nova Medium'), local('Gill-Sans-Nova-Medium'),
+        url('../fonts/GillSansNova-Medium.woff2') format('woff2'),
+        url('../fonts/GillSansNova-Medium.woff') format('woff'),
+        url('../fonts/GillSansNova-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/*Обнуляющие стили*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1440px;
+    height: 3327px;
+    background: #FFFFFF;
+}
+
+.welcomepage {
+    z-index: 0;
+    height: 902px;
+}
+
+.image-bg {
+    position: absolute;
+    width: 1440px;
+    height: 960px;
+
+
+    background: linear-gradient(1.96deg, #FFFFFF 2.23%, rgba(255, 255, 255, 0) 35.33%), url(../img/background.jpg);
+}
+
+.rectangle-one {
+    position: absolute;
+    width: 1440px;
+    height: 902px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(187.61deg, #66727C -11.27%, #FFFFFF 102.18%), #DEDEDE;
+    opacity: 0.34;
+}
+
+.rectangle-two {
+    position: absolute;
+    width: 1440px;
+    height: 902px;
+    top: 0px;
+
+    background: linear-gradient(180deg, #707070 0%, rgba(255, 255, 255, 0) 100%), #696969;
+    opacity: 0.5;
+}
+
+.header {
+    display: flex;
+    position: absolute;
+    width: 1296px;
+    margin-top: 55px;
+    margin-left: 72px;
+    margin-right: 72px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.leftside {
+    display: flex;
+}
+
+.logo {
+    margin-right: 54px;
+}
+
+.menu a{
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 26px;
+
+    color: #FFFFFF;
+}
+
+.menu .bold {
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #FFFFFF;  
+}
+
+.autorization button{
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    border: none;
+    background: none;
+
+    color: #FFFFFF;   
+}
+
+.autorization .signin {
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 29px;
+    padding: 7px 23px;
+    margin-left: 26px;
+}
+
+.title h1 {
+    position: absolute;
+    width: 628px;
+    height: 111px;
+    left: 406px;
+    top: 304px;
+
+    font-family: 'Gill Sans Nova';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 98px;
+    line-height: 141px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+.title h2 {
+    position: absolute;
+    width: 188px;
+    height: 40px;
+    left: 636px;
+    top: 435px;
+
+    font-family: 'Gill Sans Nova';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 57px;
+
+    color: #FFFFFF;
+}
+
+.input-container {
+    display: flex;
+    flex-grow: 1;
+    position: absolute;
+    width: 671px;
+    height: 60px;
+    left: 384px;
+    top: 535px;
+    
+    background: #FFFFFF;
+    border-radius: 2px;
+    align-items: center;
+}
+.input-container img {
+    margin: 22px;
+    width: 18px;
+    height: 18px;
+}
+
+.input-main {
+    width: 451px;
+    height: 50px;
+    border-radius: 2px;
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.input-container button {
+    align-self: flex-end;
+    height: 60px;
+    width: 158px;
+
+    background: #070707;
+    border-radius: 2px;
+
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+
+.golf-menu-container {
+    z-index: 1;
+    width: 1440px;
+    height: 80px;
+    padding-top: 21px;
+    text-align: center;
+    align-items: center;
+
+    background: #fff;
+}
+
+.golf-menu {
+    display: inline-flex;
+    
+}
+
+.golf-menu a {
+    font-family: 'Gill Sans Nova','Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 37px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+
+    color: #0D0D0D;
+}
+
+.golf-menu .active {
+    border-bottom: 4px solid #0D0D0D;
+    font-family: 'Gill Sans Nova','Geometria',sans-serif;;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 37px;
+
+    color: #0D0D0D;
+}
+
+.brands-menu {
+    flex: 1 1 auto;
+}
+
+.brands-container {
+    padding-top: 72px;
+}
+
+.brand-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand-title-head {
+    display: flex;
+    padding-left: 72px;
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 33px;
+
+    color: #0D0D0D;
+    align-items: center;
+}
+
+.brand-text {
+    padding-right: 20px;
+}
+
+.brand-title-head img {
+    height: 20px;
+    width: 20px;
+}
+
+.brand-title-link {
+    display: flex;
+    align-items: center;
+    padding-right: 72px;
+}
+
+.brand-title a {
+    padding-right: 13px;
+
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+
+    color: #0D0D0D;
+}
+
+.brand-elements {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.brand-element {
+    height: 332px;
+    width: 309px;
+    background: #FFFFFF;
+    box-shadow: 0px -1px 3px 5px rgba(241, 241, 241, 0.25);
+    border-radius: 20px;
+
+}
+
+.brand-element img {
+    margin: 58px 58px 0px 58px;
+    height: 194px;
+    width: 194px;
+}
+.brand-element-two img {
+    margin: 58px 58px 0px 58px;
+    height: 194px;
+    width: 194px;
+}
+
+.brand-element .description {
+    height: 79px;
+
+    border-radius: 0px 0px 20px 20px;
+    background: #FAFAFA;
+
+    padding-top: 20px;
+
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.brand-element-two {
+    height: 416px;
+    width: 309px;
+    background: #FFFFFF;
+    box-shadow: 0px -1px 3px 5px rgba(241, 241, 241, 0.25);
+    border-radius: 20px;
+
+}
+
+.brand-element-two .description {
+    height: 163px;
+
+    border-radius: 0px 0px 20px 20px;
+    background: #FAFAFA;
+
+    padding-top: 20px; 
+}
+
+.description-title {
+    padding: 0 20px;
+
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: #262525;
+}
+
+.description-text {
+    padding: 14px 20px 0 20px;
+
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: #B5B5B5;
+}
+
+.description-cost {
+    padding: 22px 20px 0 20px;
+
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: #262525;
+}
+
+footer {
+    display: flex;
+    border-top: 1px solid #EFEFF9;
+    width: 1440px;
+    height: 414px;
+
+}
+
+.footer-container {
+    padding-left: 72px;
+    padding-right: 138px;
+}
+
+.footer-container:last-child {
+    padding-left: 0;
+}
+
+.footer-title {
+    padding-top: 62px;
+
+    font-family: 'Gill Sans Nova' ,'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 37px;
+
+    color: #000000;
+}
+
+
+.footer-text {
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+
+    color: #000000;
+}
+
+.footer-text span {
+    font-weight: bold;
+}
+
+.email-title {
+    font-family: 'Gill Sans Nova', 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 37px;
+
+    color: #000000;
+}
+
+.email-input-container {
+    display: flex;
+
+    padding-top: 42px;
+}
+
+.email-input input {
+    height: 32px;
+    border-bottom: 1px solid #000000;
+}
+
+.email-button {   
+    padding-left: 22px;
+
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+
+.email-button button {
+    padding: auto;
+
+    background: #fff;
+    border: 1px solid black;
+
+    height: 32px;
+    width: 140px;
+}
+
+.footer-faq {
+    font-family: 'Gill Sans Nova','Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 37px;
+
+    color: #000000;
+}
+

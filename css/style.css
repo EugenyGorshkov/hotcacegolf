@@ -57,59 +57,43 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
-.homepage {
+html {
+    font-family: 'Geometria',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;  
+}
+
+.home-page {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 1440px;
-    height: 3327px;
-    background: #FFFFFF;
 }
 
-.welcomepage {
-    z-index: 0;
-    height: 902px;
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-.image-bg {
-    position: absolute;
-    width: 1440px;
-    height: 960px;
-
-
-    background: linear-gradient(1.96deg, #FFFFFF 2.23%, rgba(255, 255, 255, 0) 35.33%), url(../img/background.jpg);
-}
-
-.rectangle-one {
-    position: absolute;
-    width: 1440px;
-    height: 902px;
-    left: 0px;
-    top: 0px;
-
-    background: linear-gradient(187.61deg, #66727C -11.27%, #FFFFFF 102.18%), #DEDEDE;
-    opacity: 0.34;
-}
-
-.rectangle-two {
-    position: absolute;
-    width: 1440px;
-    height: 902px;
-    top: 0px;
-
-    background: linear-gradient(180deg, #707070 0%, rgba(255, 255, 255, 0) 100%), #696969;
-    opacity: 0.5;
-}
+/* Стили хедера */
 
 .header {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    max-width: 1440px;
+    width: 100%;
+    height: 5.71429rem;
+
     display: flex;
-    position: absolute;
-    width: 1296px;
-    margin-top: 55px;
-    margin-left: 72px;
-    margin-right: 72px;
+    align-items: center;
+
     justify-content: space-between;
     text-align: center;
 }
@@ -122,33 +106,18 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     margin-right: 54px;
 }
 
+
 .menu a{
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
     margin-right: 26px;
 
-    color: #FFFFFF;
+    color: #FFFFFF; 
 }
 
 .menu .bold {
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 18px;
-
-    color: #FFFFFF;  
 }
 
 .autorization button{
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
     border: none;
     background: none;
 
@@ -163,12 +132,71 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     margin-left: 26px;
 }
 
-.title h1 {
+/* Стили бекграунда */
+
+.bg {
+    position: relative;
+    z-index: -1;
+    max-height: 64.28571rem
+}
+
+.image-bg {
     position: absolute;
-    width: 628px;
+    width: 100%;
+    min-width: 1440px;
+    height: 902px;
+
+
+    background: linear-gradient(1.96deg, #FFFFFF 2.23%, rgba(255, 255, 255, 0) 35.33%), url(../img/background.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.gradient-one {
+    position: absolute;
+    width: 100%;
+    height: 902px;
+    min-width: 1440px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(187.61deg, #66727C -11.27%, #FFFFFF 102.18%), #DEDEDE no-repeat center center;
+    background-size: cover;
+    opacity: 0.34;
+}
+
+.gradient-two {
+    position: absolute;
+    width: 100%;
+    height: 902px;
+    min-width: 1440px;
+    top: 0px;
+    left: 0px;
+
+    background: linear-gradient(180deg, #707070 0%, rgba(255, 255, 255, 0) 100%), #696969 no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+/* Стили страницы с клюшкой */
+
+.welcome-page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 902px;
+}
+
+.welcome-page-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    text-align: center;
+}
+
+.title h1 {
     height: 111px;
-    left: 406px;
-    top: 304px;
 
     font-family: 'Gill Sans Nova';
     font-style: normal;
@@ -181,11 +209,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 }
 
 .title h2 {
-    position: absolute;
-    width: 188px;
     height: 40px;
-    left: 636px;
-    top: 435px;
+    margin-top: 20px;
 
     font-family: 'Gill Sans Nova';
     font-style: normal;
@@ -199,11 +224,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .input-container {
     display: flex;
     flex-grow: 1;
-    position: absolute;
     width: 671px;
     height: 60px;
-    left: 384px;
-    top: 535px;
+    margin-top: 60px;
+
     
     background: #FFFFFF;
     border-radius: 2px;
@@ -219,11 +243,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     width: 451px;
     height: 50px;
     border-radius: 2px;
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
 }
 
 .input-container button {
@@ -234,20 +253,16 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     background: #070707;
     border-radius: 2px;
 
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
     text-transform: uppercase;
 
     color: #FFFFFF;
 }
 
+/* Стили меню у выбора клюшек */
 
-.golf-menu-container {
+.golf-menu-wrapper {
     z-index: 1;
-    width: 1440px;
+    width: 100%;
     height: 80px;
     padding-top: 21px;
     text-align: center;
@@ -284,25 +299,26 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     color: #0D0D0D;
 }
 
-.brands-menu {
+
+
+.brands-menu-wrapper {
     flex: 1 1 auto;
 }
 
-.brands-container {
-    padding-top: 72px;
+.brands-menu-wrapper :last-child {
+    margin-bottom: 20px;
 }
 
+
 .brand-title {
+    margin-top: 72px;
     display: flex;
     justify-content: space-between;
 }
 
 .brand-title-head {
     display: flex;
-    padding-left: 72px;
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
+    margin-left: 72px;
     font-size: 26px;
     line-height: 33px;
 
@@ -322,15 +338,12 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .brand-title-link {
     display: flex;
     align-items: center;
-    padding-right: 72px;
+    margin-right: 72px;
 }
 
 .brand-title a {
     padding-right: 13px;
 
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 18px;
     line-height: 23px;
 
@@ -341,6 +354,14 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     padding-top: 40px;
     display: flex;
     justify-content: space-evenly;
+}
+
+.brand-elements div {
+    margin-right: 20px;
+}
+
+.brand-elements :last-child {
+    margin-right: 0;
 }
 
 .brand-element {
@@ -371,11 +392,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
     padding-top: 20px;
 
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
     font-size: 18px;
     line-height: 150%;
+    color: #262525;
 
     text-align: center;
     text-transform: uppercase;
@@ -402,9 +421,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .description-title {
     padding: 0 20px;
 
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 18px;
     line-height: 150%;
 
@@ -414,9 +430,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .description-text {
     padding: 14px 20px 0 20px;
 
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 150%;
 
@@ -426,8 +439,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .description-cost {
     padding: 22px 20px 0 20px;
 
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 20px;
     line-height: 150%;
@@ -469,9 +480,6 @@ footer {
     padding-top: 40px;
     padding-bottom: 80px;
 
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 20px;
     line-height: 25px;
 
@@ -506,8 +514,6 @@ footer {
 .email-button {   
     padding-left: 22px;
 
-    font-family: 'Geometria',sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;

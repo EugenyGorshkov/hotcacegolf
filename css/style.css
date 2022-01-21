@@ -97,18 +97,6 @@ html, body {
     padding: 0 10px;
 }
 
-/* @media (max-width: 1500px) {
-    .container {
-        max-width: 970px;
-    }
-}
-
-@media (max-width: 992px) {
-    .container {
-        max-width: 750px;
-    }
-} */
-
 @media (max-width: 768px) {
     .container {
         max-width: none;
@@ -118,7 +106,7 @@ html, body {
 
 
 
-/* ============================ Стили хедера ============================ */
+/* ======================== Стили хедера ======================== */
 
 .header {
     position: fixed;
@@ -205,10 +193,6 @@ menu {
     color: #FFFFFF;  
     text-transform: uppercase;
 }
-
-/* .autorization__signup {
-
-} */
 
 .autorization__signin {
     border: 1px solid #FFFFFF;
@@ -473,7 +457,7 @@ menu {
     opacity: 0.5;
 }
 
-/* ============== Стили страницы с клюшкой (welcome-page) ============== */
+/* =========== Стили страницы с клюшкой (welcome-page) =========== */
 
 .welcome-page {
     display: flex;
@@ -574,7 +558,7 @@ menu {
 
 }
 
-/* Стили меню у выбора клюшек */
+/* ================= Стили меню у выбора клюшек ================= */
 
 .golf__container {
     overflow-x: auto
@@ -634,7 +618,7 @@ menu {
     margin-bottom: 20px ;
 }
 
-/* ========================== block title ========================== */
+/* ======================== block title ======================== */
 
 .block__title {
     display: flex;
@@ -748,7 +732,7 @@ menu {
     color: #262525;
 }
 
-/* =============================== footer =============================== */
+/* =========================== footer =========================== */
 
 .footer {
 

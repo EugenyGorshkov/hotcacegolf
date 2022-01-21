@@ -1,3 +1,5 @@
+/* ======================== Подключение шрифтов ========================= */
+
 @font-face {
     font-family: 'Gill Sans Nova';
     src: local('Gill Sans Nova Bold'), local('Gill-Sans-Nova-Bold'),
@@ -18,7 +20,8 @@
     font-style: normal;
 }
 
-/*Обнуляющие стили*/
+/* ========================== Обнуляющие стили ========================== */
+
 *{
 	padding: 0;
 	margin: 0;
@@ -55,96 +58,331 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
-/*--------------------*/
 
-html {
+/* ====================================================================== */
+
+html, body {
     font-family: 'Geometria',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
     color: #FFFFFF;  
+    /* background-color: gray; */
 }
 
-.home-page {
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.page {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+@media (max-width:550px) {
+    .page {
+        padding-top: 80px;
+    }
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1320px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
-/* Стили хедера */
+/* @media (max-width: 1500px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+} */
+
+@media (max-width: 768px) {
+    .container {
+        max-width: none;
+        padding: 0px 20px;
+    }
+}
+
+
+
+/* ============================ Стили хедера ============================ */
 
 .header {
     position: fixed;
     top: 0;
-    z-index: 2;
-    max-width: 1440px;
+    left: 50%;
     width: 100%;
+    transform:translate(-50%);
+    z-index: 10;
     height: 5.71429rem;
-
     display: flex;
     align-items: center;
+}
 
+
+.header__container {
+    width: 100%;
+}
+
+
+.header__menu {
+    display: flex;
+    align-items: center;
+}
+
+menu {
+    position: relative;
+}
+
+.menu__logo {
+    padding-right: 54px;
+}
+
+.menu__icon {
+    display: none;
+}
+
+.menu__body{
+    width: 100%;
+    display: flex;
     justify-content: space-between;
     text-align: center;
+    align-items: center;
 }
 
-.leftside {
+.menu__list {
+    flex: 1 1 auto;
     display: flex;
+    text-align: center;
+    align-items: start;
 }
 
-.logo {
-    margin-right: 54px;
+.menu__item {
+    padding-right: 26px;
 }
 
-
-.menu a{
-    margin-right: 26px;
-
-    color: #FFFFFF; 
+.menu__item:last-child {
+    padding-right: 0px;
 }
 
-.menu .bold {
+.menu__item_bold {
     font-weight: bold;
 }
 
-.autorization button{
-    border: none;
-    background: none;
-
-    color: #FFFFFF;   
+.menu__link {
+    color: #FFFFFF;
 }
 
-.autorization .signin {
+.autorization {
+    display: flex;
+}
+
+.autorization button {
+    background: transparent;
+
+    color: #FFFFFF;  
+    text-transform: uppercase;
+}
+
+/* .autorization__signup {
+
+} */
+
+.autorization__signin {
     border: 1px solid #FFFFFF;
-    box-sizing: border-box;
     border-radius: 29px;
     padding: 7px 23px;
     margin-left: 26px;
 }
 
-/* Стили бекграунда */
+/* =========================== heder scrolled =========================== */
 
-.bg {
-    position: relative;
-    z-index: -1;
-    max-height: 64.28571rem
+.header.scrolled {
+    background: #FFFFFF;
 }
+/* .header.scrolled .menu__logo{
+
+} */
+.header.scrolled .menu__link {
+    color: black;
+}
+.header.scrolled .autorization button {
+    color: black;
+}
+.header.scrolled .autorization__signin {
+    border: 1px solid black;
+}
+
+/* =============================== media =============================== */
+
+@media (max-width: 768px) {
+    .header {
+        background-color: #fff;
+    }
+    /* ========================= иконка бургера ========================= */
+    .menu__icon {
+        z-index: 5;
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .menu__icon span,
+    .menu__icon::before,
+    .menu__icon::after {
+        left: 0;
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: black;
+
+    }
+    .menu__icon::before,
+    .menu__icon::after {
+        content: '';
+    }
+    .menu__icon::before {
+        top: 0;
+    }
+    .menu__icon::after {
+        bottom: 0;
+    }
+    .menu__icon span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+
+    .menu__icon._active span{
+        transform: scale(0) translate(0px, -50%);
+    }
+
+    .menu__icon._active::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    .menu__icon._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+    }
+
+    /* ================================================================== */
+
+    .menu__logo {
+        display: none;
+    }
+    .menu__body{
+        display: none;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 5.71429rem;
+        
+        background-color: #fff;
+    }
+    .menu__body._active {
+        display: block;
+    }
+
+    .menu__list {
+        display: block;
+    }
+    .menu__list li {
+        padding: 10px 0px;
+    }
+    .menu__item {
+        padding-right: 0px;
+    }
+    .menu__link {
+        font-size: 24px;
+        color: black;
+    }
+
+    .autorization button {
+        flex: 1 1 50%;
+        font-size: 24px;
+        background: none;
+    
+        color: black;  
+    }
+    .autorization__signup {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 7px 23px;
+        margin: 10px 10px;
+    }
+    .autorization__signin {
+        margin: 10px 10px;
+        border-radius: 5px;
+    } 
+    .autorization #signin{
+        background: black;
+        color: #FFFFFF;
+    }
+
+}
+
+
+
+/* ============================ media header ============================ */
+
+
+/* ========================== Стили бекграунда ========================== */
+
+.ibg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+    
+.ibg img { 
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* .bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    max-height: 64.28571rem;
+    padding-bottom: 62.5%;
+}
+
+
 
 .image-bg {
     position: absolute;
     width: 100%;
     min-width: 1440px;
-    height: 902px;
+    height: 100%;
+    top: 0;
+    left: 0;
 
 
     background: linear-gradient(1.96deg, #FFFFFF 2.23%, rgba(255, 255, 255, 0) 35.33%), url(../img/background.jpg) no-repeat center center;
@@ -154,7 +392,7 @@ html {
 .gradient-one {
     position: absolute;
     width: 100%;
-    height: 902px;
+    height: 100%;
     min-width: 1440px;
     left: 0px;
     top: 0px;
@@ -167,7 +405,7 @@ html {
 .gradient-two {
     position: absolute;
     width: 100%;
-    height: 902px;
+    height: 100%;
     min-width: 1440px;
     top: 0px;
     left: 0px;
@@ -175,78 +413,83 @@ html {
     background: linear-gradient(180deg, #707070 0%, rgba(255, 255, 255, 0) 100%), #696969 no-repeat center center;
     background-size: cover;
     opacity: 0.5;
-}
+} */
 
-/* Стили страницы с клюшкой */
+/* ============== Стили страницы с клюшкой (welcome-page) ============== */
 
 .welcome-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 902px;
+    flex: 1 0 100%;
 }
 
-.welcome-page-content {
+.welcome-page.disabled {
+    display: none;
+}
+
+.welocome-page__bg {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.welcome-page__content {
     z-index: 1;
     text-align: center;
+    width: 47.85714rem;
 }
 
-.title h1 {
-    height: 111px;
-
+.welocme-page__title {
     font-family: 'Gill Sans Nova';
-    font-style: normal;
+    font-style: normal; 
+}
+
+.welocme-page__title h1 {
     font-weight: bold;
     font-size: 98px;
     line-height: 141px;
     text-transform: uppercase;
 
+    margin-bottom: 1.42857rem;
+
     color: #FFFFFF;
 }
 
-.title h2 {
-    height: 40px;
-    margin-top: 20px;
-
-    font-family: 'Gill Sans Nova';
-    font-style: normal;
+.welocme-page__title h2 {
     font-weight: 500;
     font-size: 40px;
     line-height: 57px;
 
+    margin-bottom: 4.28571rem;
+
     color: #FFFFFF;
 }
 
-.input-container {
+.search {
     display: flex;
-    flex-grow: 1;
-    width: 671px;
-    height: 60px;
-    margin-top: 60px;
-
-    
-    background: #FFFFFF;
-    border-radius: 2px;
     align-items: center;
-}
-.input-container img {
-    margin: 22px;
-    width: 18px;
-    height: 18px;
-}
 
-.input-main {
-    width: 451px;
-    height: 50px;
+    background-color: #fff;
     border-radius: 2px;
 }
 
-.input-container button {
-    align-self: flex-end;
+.search__img {
+    margin-left: 20px;
+}
+
+.search__input {
+    padding-left: 20px;
+    flex: 1 0 auto;
+    max-height: 60px;
+    height: 60px;
+}
+
+.search__button button{
     height: 60px;
     width: 158px;
 
@@ -258,133 +501,149 @@ html {
     color: #FFFFFF;
 }
 
+@media (max-width:768px) {
+    .welcome-page__content {
+        padding: 0 20px;
+    } 
+    .welocme-page__title h1 {
+        font-size: 80px; 
+        line-height: 80px;
+    }
+    .welocme-page__title h2 {
+        font-size: 30px;
+        margin-bottom: 2.28571rem;
+    }
+
+}
+
 /* Стили меню у выбора клюшек */
 
-.golf-menu-wrapper {
-    z-index: 1;
-    width: 100%;
-    height: 80px;
-    padding-top: 21px;
-    text-align: center;
-    align-items: center;
-
-    background: #fff;
+.golf__container {
+    overflow-x: auto
 }
 
-.golf-menu {
-    display: inline-flex;
-    
+.golf-menu__list {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
 }
 
-.golf-menu a {
-    font-family: 'Gill Sans Nova','Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
+.golf-menu__item {
+    padding: 0 1.42857rem;
+    white-space: nowrap;
+}
+
+.golf-menu__link {
+    font-family: 'Gill Sans Nova';
     font-size: 26px;
     line-height: 37px;
-    margin-right: 20px;
+
+
+
+    color: #0D0D0D;
+}
+
+.golf-menu__link.active {
     padding-bottom: 20px;
-
-    color: #0D0D0D;
-}
-
-.golf-menu .active {
     border-bottom: 4px solid #0D0D0D;
-    font-family: 'Gill Sans Nova','Geometria',sans-serif;;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 26px;
-    line-height: 37px;
-
-    color: #0D0D0D;
+    font-weight: 700;
 }
 
+@media (max-width: 768px) {
+    .golf-menu__list {
+        justify-content: flex-start;
+    }
+    .golf-menu__item:first-child,
+    .golf-menu__item:last-child {
+        padding-left: 0;
+    }
+    .golf-menu__link.active {
+        padding-bottom: 12px;
+        border-bottom: 3px solid #0D0D0D;
+    }
+}
 
+/* ======================================================= */
 
-.brands-menu-wrapper {
+.brands-menu {
     flex: 1 1 auto;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
 }
 
-.brands-menu-wrapper :last-child {
-    margin-bottom: 20px;
+.block:last-child {
+    margin-bottom: 20px ;
 }
 
+/* ========================== block title ========================== */
 
-.brand-title {
-    margin-top: 72px;
+.block__title {
     display: flex;
     justify-content: space-between;
 }
 
-.brand-title-head {
+
+.head {
+    margin-top: 72px;
     display: flex;
-    margin-left: 72px;
+    align-items: center;
+}
+
+.head__text {
     font-size: 26px;
     line-height: 33px;
 
     color: #0D0D0D;
-    align-items: center;
-}
 
-.brand-text {
     padding-right: 20px;
 }
 
-.brand-title-head img {
-    height: 20px;
-    width: 20px;
-}
-
-.brand-title-link {
+.head-link {
     display: flex;
-    align-items: center;
-    margin-right: 72px;
-}
-
-.brand-title a {
-    padding-right: 13px;
-
     font-size: 18px;
     line-height: 23px;
 
     color: #0D0D0D;
 }
 
-.brand-elements {
-    padding-top: 40px;
+.head-link img {
+    padding-left: 13px;
+}
+
+.block__elements {
+    overflow-x: auto;
     display: flex;
-    justify-content: space-evenly;
+
+    padding-top: 40px;
 }
 
-.brand-elements div {
-    margin-right: 20px;
-}
-
-.brand-elements :last-child {
-    margin-right: 0;
-}
-
-.brand-element {
+.element {
     height: 332px;
     width: 309px;
     background: #FFFFFF;
     box-shadow: 0px -1px 3px 5px rgba(241, 241, 241, 0.25);
     border-radius: 20px;
-
+    margin-right: 20px;
 }
 
-.brand-element img {
+.element_p {
+    height: 416px; 
+}
+
+.element:last-child {
+    margin-right: 0;   
+}
+
+.element img {
     margin: 58px 58px 0px 58px;
     height: 194px;
     width: 194px;
 }
-.brand-element-two img {
-    margin: 58px 58px 0px 58px;
-    height: 194px;
-    width: 194px;
-}
 
-.brand-element .description {
+
+
+.element__description {
     height: 79px;
 
     border-radius: 0px 0px 20px 20px;
@@ -400,43 +659,28 @@ html {
     text-transform: uppercase;
 }
 
-.brand-element-two {
-    height: 416px;
-    width: 309px;
-    background: #FFFFFF;
-    box-shadow: 0px -1px 3px 5px rgba(241, 241, 241, 0.25);
-    border-radius: 20px;
-
-}
-
-.brand-element-two .description {
+.element_p .description {
     height: 163px;
-
-    border-radius: 0px 0px 20px 20px;
-    background: #FAFAFA;
-
-    padding-top: 20px; 
+    text-align: left;
+    text-transform: none;
 }
 
-.description-title {
+.description__title{
     padding: 0 20px;
-
-    font-size: 18px;
-    line-height: 150%;
-
-    color: #262525;
+    font-weight: normal;
 }
 
-.description-text {
+.description__text {
     padding: 14px 20px 0 20px;
 
     font-size: 14px;
     line-height: 150%;
+    font-weight: normal;
 
     color: #B5B5B5;
 }
 
-.description-cost {
+.description__cost {
     padding: 22px 20px 0 20px;
 
     font-weight: 800;
@@ -446,84 +690,87 @@ html {
     color: #262525;
 }
 
-footer {
-    display: flex;
+/* =============================== footer =============================== */
+
+.footer {
+
     border-top: 1px solid #EFEFF9;
-    width: 1440px;
-    height: 414px;
+
 
 }
 
-.footer-container {
-    padding-left: 72px;
-    padding-right: 138px;
-}
-
-.footer-container:last-child {
-    padding-left: 0;
-}
-
-.footer-title {
-    padding-top: 62px;
-
-    font-family: 'Gill Sans Nova' ,'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 37px;
-
+.footer__container {
+    display: flex;
     color: #000000;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    
+
+}
+
+.footer__column {
+    margin-right: 138px;
+}
+
+.footer__column:last-child {
+    margin-right: 0;
+}
+
+.footer__element {
+    padding-top: 62px;
 }
 
 
-.footer-text {
-    padding-top: 40px;
-    padding-bottom: 80px;
+.footer__header {
+    font-size: 26px;
+    font-family: 'Gill Sans Nova';
+    padding-bottom: 40px;
 
+}
+
+.footer__text {
+    font-weight: normal;
     font-size: 20px;
     line-height: 25px;
-
-    color: #000000;
+    padding-bottom: 80px;
 }
 
-.footer-text span {
+.footer__text span {
     font-weight: bold;
 }
 
-.email-title {
-    font-family: 'Gill Sans Nova', 'Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
+.footer__email {
+    display: flex;
+    padding-bottom: 56px;
+    flex-direction: column;
+}
+
+.footer__faq {
+    font-family: 'Gill Sans Nova';
     font-size: 26px;
     line-height: 37px;
-
-    color: #000000;
 }
 
-.email-input-container {
-    display: flex;
-
-    padding-top: 42px;
+.footer__link{
+    color: black;
 }
 
-.email-input input {
+.email__title {
+    font-family: 'Gill Sans Nova';
+    font-size: 26px;
+    line-height: 37px;
+    padding-bottom: 18px;
+}
+
+.email__input input{
     height: 32px;
     border-bottom: 1px solid #000000;
 }
 
-.email-button {   
-    padding-left: 22px;
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+.email__input button {
+    margin-left: 22px;
     text-transform: uppercase;
-
-    color: #000000;
-}
-
-.email-button button {
-    padding: auto;
 
     background: #fff;
     border: 1px solid black;
@@ -532,13 +779,64 @@ footer {
     width: 140px;
 }
 
-.footer-faq {
-    font-family: 'Gill Sans Nova','Geometria',sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 37px;
-
-    color: #000000;
+@media (max-width:1100px) {
+    .footer__column:first-child {
+        margin-right: 100px;
+    } 
+    .footer__header {
+        font-size: 22px;
+        padding-bottom: 30px;
+    }
+    .footer__text {
+        font-size: 16px;
+        padding-bottom: 35px;
+    }
+    .email__title {
+        font-size: 22px;
+    }
+    .footer__faq {
+        font-size: 22px;
+    }
 }
+
+@media (max-width:900px) {
+    .footer__column:first-child {
+        margin-right: 40px;
+    } 
+}
+
+@media (max-width:768px) {
+
+    .footer__container {
+        display: block;
+        white-space: inherit;
+    }
+    .footer__column:first-child {
+        margin-right: 0;
+    }
+    .email__input {
+        display: flex;
+    }
+    .email__input input {
+        flex: 1 0 auto
+    }
+    .footer__faq {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width:400px) {
+    .email__input {
+        flex-direction: column;
+
+    }
+    .email__input input {
+        margin-bottom: 15px;
+    }
+    .email__input button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
 

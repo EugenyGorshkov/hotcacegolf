@@ -1,4 +1,4 @@
-/* ======================== Подключение шрифтов ========================= */
+/* ==================== Подключение шрифтов ===================== */
 
 @font-face {
     font-family: 'Gill Sans Nova';
@@ -20,7 +20,7 @@
     font-style: normal;
 }
 
-/* ========================== Обнуляющие стили ========================== */
+/* ====================== Обнуляющие стили ====================== */
 
 *{
 	padding: 0;
@@ -59,7 +59,7 @@ img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
-/* ====================================================================== */
+/* =============================================================== */
 
 html, body {
     font-family: 'Geometria',sans-serif;
@@ -67,8 +67,7 @@ html, body {
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
-    color: #FFFFFF;  
-    /* background-color: gray; */
+    color: #FFFFFF;
 }
 
 .wrapper {
@@ -142,6 +141,7 @@ html, body {
 .header__menu {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 menu {
@@ -150,6 +150,10 @@ menu {
 
 .menu__logo {
     padding-right: 54px;
+}
+
+.menu__logo-burger_black {
+    display: none;
 }
 
 .menu__icon {
@@ -162,6 +166,10 @@ menu {
     justify-content: space-between;
     text-align: center;
     align-items: center;
+}
+
+.search_burger {
+    display: none;
 }
 
 .menu__list {
@@ -209,7 +217,7 @@ menu {
     margin-left: 26px;
 }
 
-/* =========================== heder scrolled =========================== */
+/* ======================= heder scrolled ======================= */
 
 .header.scrolled {
     background: #FFFFFF;
@@ -227,18 +235,34 @@ menu {
     border: 1px solid black;
 }
 
-/* =============================== media =============================== */
+.menu__logo_black {
+    display: none;
+}
+
+.menu__search-icon {
+    display: none;
+}
+
+.header.scrolled .menu__logo_black {
+    display: block;
+}
+.header.scrolled .menu__logo_white {
+    display: none;
+}
+
+/* ============================ media ============================ */
 
 @media (max-width: 768px) {
     .header {
         background-color: #fff;
     }
-    /* ========================= иконка бургера ========================= */
+    /* ==================== иконка бургера ==================== */
     .menu__icon {
+        order: 1;
         z-index: 5;
         display: block;
         position: relative;
-        width: 40px;
+        width: 34px;
         height: 30px;
         cursor: pointer;
     }
@@ -282,9 +306,21 @@ menu {
         transform: rotate(45deg) translate(0px, 50%);
     }
 
-    /* ================================================================== */
+    /* =========================================================== */
 
     .menu__logo {
+        display: block;
+        order: 2;
+        padding-right: 0;
+        z-index: 2;
+    }
+    .menu__logo_white {
+        display: none;
+    }
+    .menu__logo-burger_black {
+        display: block;
+    }
+    .menu__logo._active {
         display: none;
     }
     .menu__body{
@@ -297,6 +333,56 @@ menu {
         
         background-color: #fff;
     }
+
+    /* ============================== */
+    .menu__search-icon {
+        display: block;
+    }
+    .menu__search-icon .search-icon{
+        display: block;
+    }
+    .menu__search-icon .search-icon_active{
+        display: none;
+    }
+    .menu__search-icon.active .search-icon{
+        display: none;
+    }
+    .menu__search-icon.active .search-icon_active {
+        display: block;
+    }
+
+    .search_burger._active {
+        order: 2;
+        z-index: 5;
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+    }
+    .search_burger__input {
+        height: 60px;
+        width: 100%;
+        flex: 0 1 auto;
+        margin: 0 20px;
+
+    }
+    .search_burger__input input {
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;;
+        border-radius: 10px;
+        background-color: lightgray;
+    }
+
+    .menu__search-icon {
+        order: 3;
+        justify-self: flex-end;
+        z-index: 5;
+    }
+    .menu__search-icon img {
+        height: 20px;
+    }
+
+    /* ================================ */
     .menu__body._active {
         display: block;
     }
@@ -341,10 +427,10 @@ menu {
 
 
 
-/* ============================ media header ============================ */
+/* ======================== media header ======================== */
 
 
-/* ========================== Стили бекграунда ========================== */
+/* ====================== Стили бекграунда ====================== */
 
 .ibg {
     background-position: center;
@@ -363,37 +449,10 @@ menu {
     visibility: hidden;
 }
 
-/* .bg {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    max-height: 64.28571rem;
-    padding-bottom: 62.5%;
-}
-
-
-
-.image-bg {
-    position: absolute;
-    width: 100%;
-    min-width: 1440px;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-
-    background: linear-gradient(1.96deg, #FFFFFF 2.23%, rgba(255, 255, 255, 0) 35.33%), url(../img/background.jpg) no-repeat center center;
-    background-size: cover;
-}
-
 .gradient-one {
     position: absolute;
     width: 100%;
     height: 100%;
-    min-width: 1440px;
     left: 0px;
     top: 0px;
 
@@ -406,14 +465,13 @@ menu {
     position: absolute;
     width: 100%;
     height: 100%;
-    min-width: 1440px;
     top: 0px;
     left: 0px;
 
     background: linear-gradient(180deg, #707070 0%, rgba(255, 255, 255, 0) 100%), #696969 no-repeat center center;
     background-size: cover;
     opacity: 0.5;
-} */
+}
 
 /* ============== Стили страницы с клюшкой (welcome-page) ============== */
 
